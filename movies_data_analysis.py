@@ -85,6 +85,8 @@ df["genre_ids"] = df["genre_ids"].apply(lambda x: [int(genre_id) for genre_id in
 df["genre_map"] = df["genre_ids"].apply(
     lambda x: [GENRE_MAP[genre_id] for genre_id in x]
 )
+df['release_date'] = pd.to_datetime(df['release_date'])
+
 
 # TODO:
 # perform some basic genre analysis
